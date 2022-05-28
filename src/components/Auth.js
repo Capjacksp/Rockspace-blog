@@ -37,14 +37,16 @@ const Auth = () => {
     e.preventDefault();
     console.log(inputs);
     if (IsSignup) {
-      sendRequest("signup").then((data)=>localStorage.setItem("userId",data.user._id))
+      sendRequest("signup")
+        .then((data) => localStorage.setItem("userId", data.user._id))
         .then(() => dispath(authAction.login()))
-        .then(() => navigate("./blogs"))
+        .then(() => navigate("../"))
         .then((data) => console.log(data));
     } else {
-      sendRequest().then((data)=>localStorage.setItem("userId",data.user._id))
+      sendRequest()
+        .then((data) => localStorage.setItem("userId", data.user._id))
         .then(() => dispath(authAction.login()))
-        .then(() => navigate("./blogs"))
+        .then(() => navigate("../"))
         .then((data) => console.log(data));
     }
   };
@@ -58,15 +60,21 @@ const Auth = () => {
           flexDirection={"column"}
           alignItems="center"
           justifyContent={"center"}
+          border="2px solid #ccc"
+          mt="20px"
+          ml="20px"
+          mr="20px"
         >
-          {!IsSignup && <Typography> Login </Typography>}
-          {IsSignup && <Typography> Signup </Typography>}
+          {!IsSignup && <Typography variant="h3" sx={{color:"#445e6f"}}> Login </Typography>}
+          {IsSignup && <Typography  variant="h3" sx={{color:"#445e6f"}}> Signup </Typography>}
           {IsSignup && (
             <TextField
               name="name"
               onChange={handlechange}
               value={inputs.name}
               placeholder="Name"
+              margin="normal"
+              required
             />
           )}
           <TextField
@@ -75,6 +83,8 @@ const Auth = () => {
             value={inputs.email}
             type={"email"}
             placeholder="Email"
+            margin="normal"
+            required
           />
           <TextField
             name="password"
@@ -82,9 +92,14 @@ const Auth = () => {
             value={inputs.password}
             type={"password"}
             placeholder="Password"
+            margin="normal"
+            required
           />
-          <Button type="submit">Submit</Button>
-          <Button onClick={() => setIsSignup(!IsSignup)}>
+          <Button 
+          type="submit"
+          sx={{background:"#445e6f",color:"#ffffff",marginTop:"10px"}}
+          >Submit</Button>
+          <Button sx={{border:"2px solid #445e6f",color:"#445e6f",marginTop:"15px",marginBottom:"20px"}} onClick={() => setIsSignup(!IsSignup)}>
             Change to {IsSignup ? "Login" : "Signup"}
           </Button>
         </Box>

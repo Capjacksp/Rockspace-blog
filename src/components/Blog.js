@@ -52,21 +52,20 @@ const Blog = ({ title, description, imageURL, userName, isUser,id }) => {
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-              {userName}
+              {userName[0]}
             </Avatar>
           }
           title={title}
-          subheader=""
+          
         />
         <CardMedia
           component="img"
           height="194"
           image={imageURL}
-          alt="Paella dish"
         />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            <b>{userName}</b>
+            <b>By {userName}</b>
             {":"} {description}
           </Typography>
         </CardContent>

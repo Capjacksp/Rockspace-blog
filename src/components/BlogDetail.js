@@ -26,7 +26,7 @@ const BlogDetail = () => {
       setBlog(data.blog)
       setInputs({
         title: data.blog.title,
-        description: data.blog.description,
+        description: data.blog.description
       })
 
     })
