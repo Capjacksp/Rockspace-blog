@@ -19,7 +19,7 @@ const Blog = ({ title, description, imageURL, userName, isUser,id }) => {
         navigate(`/myBlogs/${id}`)
     }
     const deleteRequest = async()=>{
-        const res = await axios.delete(`https://rock-space-bog.herokuapp.com/api/blog/${id}`).catch(err=>console.log(err))
+        const res = await axios.delete(`https://blogs-dwv0.onrender.com/api/blog/${id}`).catch(err=>console.log(err))
         const data = await res.data;
         return data;
     }

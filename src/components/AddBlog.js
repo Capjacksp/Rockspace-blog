@@ -25,7 +25,7 @@ const AddBlog = () => {
   }
 
   const sendRequest =async()=>{
-    const res = await axios.post("https://rock-space-bog.herokuapp.com/api/blog/add",{
+    const res = await axios.post("https://blogs-dwv0.onrender.com/api/blog/add",{
       title:inputs.title,
       description:inputs.description,
       image:inputs.imageURL,

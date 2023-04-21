@@ -7,7 +7,7 @@ const UserBlogs = () => {
   const id = localStorage.getItem("userId");
   const sendRequest = async () => {
     const res = await axios
-      .get(`https://rock-space-bog.herokuapp.com/api/blog/user/${id}`)
+      .get(`https://blogs-dwv0.onrender.com/api/blog/user/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

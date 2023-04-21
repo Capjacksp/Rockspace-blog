@@ -17,7 +17,7 @@ const BlogDetail = () => {
   }
   console.log(id);
   const fetchDetails=async()=>{
-    const res = await axios.get(`https://rock-space-bog.herokuapp.com/api/blog/${id}`).catch(err=>console.log(err))
+    const res = await axios.get(`https://blogs-dwv0.onrender.com/api/blog/${id}`).catch(err=>console.log(err))
     const data = await res.data;
     return data;
   }
@@ -33,7 +33,7 @@ const BlogDetail = () => {
   },[id]);
 
   const sendRequest = async()=>{
-    const res = await axios.put(`https://rock-space-bog.herokuapp.com/api/blog/update/${id}`,{
+    const res = await axios.put(`https://blogs-dwv0.onrender.com/api/blog/update/${id}`,{
       title:inputs.title,
       description:inputs.description
     }).catch(err=>console.log(err))
